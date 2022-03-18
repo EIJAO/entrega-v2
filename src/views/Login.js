@@ -10,7 +10,7 @@ export default function Login() {
             <main>
 
 
-                <form>
+                <form className='col-3'>
                     <img className="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
                     <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 

@@ -8,29 +8,39 @@ import Header from './main/Header'
 import Clientes from './main/Clientes'
 
 
+import Login from './Login'
+
+
 export default function Main() {
 
-    return (
-        <div>
+    const [logado, setLogado] = useState(false)
 
-            <Header />
+    if (logado == false) {
+        return <Login />
+    } else {
 
-            <div className="container-fluid">
-                <div className="row">
+        return (
+            <div>
 
-                    <Menu />
+                <Header />
 
-                    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">                        
+                <div className="container-fluid">
+                    <div className="row">
 
-                        <Routes>
-                            <Route path="/" element={<Listagem />} />
-                            <Route path="/clientes" element={<Clientes />} />
-                        </Routes>
+                        <Menu />
 
-                    </main>
+                        <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                            <Routes>
+                                <Route path="/" element={<Listagem />} />
+                                <Route path="/clientes" element={<Clientes />} />
+                            </Routes>
+
+                        </main>
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    )
+            </div>
+        )
+    }
 }

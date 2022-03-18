@@ -1,5 +1,27 @@
 
+import firebase from '../../firebase'
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore"; 
+
+const db = getFirestore(firebase)
+
+const col = collection(db, 'entregas');
+
+async function listar()
+{
+  const res = await getDocs(col);
+
+  res.forEach(function(item){
+    console.log(item)
+  })
+
+
+}
+
 export default function Listagem() {
+
+ listar();
+
   return (
     <div>
       <h2>Entregas do Dia</h2>
