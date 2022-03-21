@@ -1,12 +1,10 @@
 import { useState } from 'react'
-
 import { Routes, Route, Link } from "react-router-dom";
 
 import Listagem from './main/Listagem'
 import Menu from './main/Menu'
 import Header from './main/Header'
 import Clientes from './main/Clientes'
-
 
 import Login from './Login'
 
@@ -15,7 +13,8 @@ export default function Main() {
 
     const [logado, setLogado] = useState(false)
 
-    if (logado == false) {
+    if (logado == false) 
+    {
         return <Login />
     } else {
 
